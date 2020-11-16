@@ -15,6 +15,7 @@ public class House {
         furniture.use();
     }
     public House_Furniture furniture(){
+
         return furniture;
     }
 

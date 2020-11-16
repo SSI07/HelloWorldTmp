@@ -24,4 +24,8 @@ public class HashMapExample {
     public String getDesc() {
         return desc;
     }
+
+    public int getKey() {
+        return key;
+    }
 }

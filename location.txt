@@ -1,0 +1,6 @@
+0,Quit
+1,You are in the kitchen
+2,You are in the Hall
+3,You are in the Bedroom
+4,You are in Dining room
+10,You are out of your home
