@@ -3,9 +3,9 @@ package com.ssi.hashmap;
 import java.util.HashMap;
 
 public class HashMapExample {
-    private int key;
-    private String desc;
-    private HashMap<String,Integer> exit;
+    private final int key;
+    private final String desc;
+    private final HashMap<String,Integer> exit;
 
     public HashMapExample(int key, String desc) {
         this.key = key;
