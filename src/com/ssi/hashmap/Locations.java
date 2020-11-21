@@ -18,9 +18,7 @@ public class Locations extends HashMap<Integer, HashMapExample> {
         }
     }*/
     static {
-        Scanner sc=null;
-        try {
-           sc=new Scanner(new FileReader("location.txt"));
+        try(Scanner sc=new Scanner(new FileReader("location.txt"))) {
             //sc.useDelimiter(",");
             while (sc.hasNextLine()){
                 String[] tmp_arr=sc.nextLine().split(",");
@@ -32,13 +30,11 @@ public class Locations extends HashMap<Integer, HashMapExample> {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }finally {
-            sc.close();
         }
-        try{
-            sc=new Scanner(new BufferedReader(new FileReader("direction.txt")));
-            while (sc.hasNextLine()){
-                String[] tmp_arr2=sc.nextLine().split(",");
+        try(BufferedReader sc=new BufferedReader(new FileReader("direction.txt"))){
+
+            while (sc.readLine()!=null){
+                String[] tmp_arr2=sc.readLine().split(",");
                 int loc=Integer.parseInt(tmp_arr2[0]);
                 String direction=tmp_arr2[1];
                 int room= Integer.parseInt(tmp_arr2[2]);
@@ -46,10 +42,8 @@ public class Locations extends HashMap<Integer, HashMapExample> {
                 locations.addExit(direction,room);
             }
 
-        }catch (FileNotFoundException e) {
+        }catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            sc.close();
         }
         /*location.put(0,new HashMapExample(0,"Quit"));
         location.put(10,new HashMapExample(10,"You are out of your home"));

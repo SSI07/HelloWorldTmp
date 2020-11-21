@@ -29,21 +29,21 @@ public class Main {
         point_table(Crows2);
         System.out.println("Point Table");
       //
-        Comparator com=new Comparator() {
-            @Override
-            public int compare(Object o1, Object o2) {
-                return ((Comparable) ((Map.Entry) (o2)).getValue())
-                        .compareTo(((Map.Entry) (o1)).getValue());
-            }
-        };
         List list=new LinkedList(table.entrySet());
-        Collections.sort(list,com);
+        Collections.sort(list,(Object o1, Object o2)->
 
+                 ((Comparable) ((Map.Entry) (o2)).getValue())
+                        .compareTo(((Map.Entry) (o1)).getValue())
+
+        );
+/*
         for(Object l: list){
             System.out.println(l.toString());
-        }
+        }*/
+        list.forEach(i-> System.out.println(i));
        /* for(String m:table.keySet())
             System.out.println(m+" : "+table.get(m));
+
 */
     }
     public static void point_table(Team1 team){
