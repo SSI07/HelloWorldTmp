@@ -13,7 +13,12 @@ public class Main{
         t3.start();
         new Thread(){
             public void run(){
-                System.out.println(ANSI_CYAN +"IM thread 4");
+                try {
+                    t3.join();
+                    System.out.println(ANSI_CYAN +"IM thread 4");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }.start();
 
