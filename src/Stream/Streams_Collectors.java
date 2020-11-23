@@ -15,5 +15,6 @@ public class Streams_Collectors {
         System.out.println(val2.stream().collect(Collectors.counting()));
         System.out.println(val.stream().reduce(0,(c,e)->c+e));
         System.out.println(val.stream().collect(Collectors.averagingInt(i->i/3)));
+        
        }
     }
